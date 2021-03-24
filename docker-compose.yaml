@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  postgres-server:
+    image: postgres:12-alpine
+    ports:
+      - 5432:5432
+    volumes:
+      - pgdata:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=dev
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=devdb
+      - DB_SERVER_PORT=5432
+
+volumes:
+  pgdata:
